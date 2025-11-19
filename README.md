@@ -5,10 +5,19 @@ Lecture materials for epidemic models and inference.
 
 Some example datasets, under the `datasets` folder. 
 
+The first three datasets are real data. Last two are simulated based on features of real-world datasets (that are private and cannot share). 
+
 ### JHU Covid-19 time series data
 
 US case counts and death counts data downloaded from [this public repository](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series). 
 Please read their documentation for description. 
+
+### Ebola outbreak data from Guinea
+
+Population-level weekly incidence counts (probable & confirmed cases) from different prefectures in Guinea for the 2013-2015 Ebola outbreak. 
+
+Datasets from [this paper](https://doi.org/10.1214/25-AOAS2048); 
+processed data in other formats also available from this [Github repo](https://github.com/rmorsomme/PDSIR). 
 
 ### Ebola outbreak data from Demographic Republic of the Congo
 
@@ -21,6 +30,26 @@ Each row represents data from each patient. The columns are:
 - `hosp`: removal time (hospitalization, isolation, or death); after this point the individual is considered no longer infectious.
 - `event1`: if `onset` time was censored/unobserved (0 = censored, 1 otherwise).
 - `event2`: if `hosp` time was censored/unobserved (0 = censored, 1 otherwise).
+
+### Simulated data for a population with group-level effects (two groups)
+
+A simulated dataset from a stochastic SIR-D model on a population with two demographic groups (e.g., younger / older populations) with 
+different infection / recovery rates, and cross infections between two groups. You can assume that after infection, an individual either dies or recovers, with a certain recovery/death rate within each group. 
+
+The dataset has daily counts on infections and deaths, with columns: 
+
+ - `I_obs_g0`: observed number of infectious indivduals for group 0
+ - `I_obs_g1`: observed number of infectious indivduals for group 1
+ - `ObsIncidence_g0`: new observed infection counts from group 0
+ - `ObsIncidence_g1`: new observed infection counts from group 1
+ - `D_cum_g0`: cumulative deaths in group 0
+ - `D_cum_g1`: cumulative deaths in group 1
+ - `DeathsDaily_g0': new deaths in group 0 (true counts, observed + unobserved)
+ - `DeathsDaily_g1`: new deaths in group 1
+ - `DeathsDailyObs_g0`: new deaths among observed infected individuals in group 0
+ - `DeathsDailyObs_g1`: new deaths among observed infected individuals in group 1
+
+As you can probably guess, the observed counts are not necessarily the same as true counts, due to possible under-reporting. 
 
 ### Simulated data for flu transmission and contact tracing
 
