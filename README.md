@@ -44,7 +44,7 @@ The dataset has daily counts on infections and deaths, with columns:
  - `ObsIncidence_g1`: new observed infection counts from group 1
  - `D_cum_g0`: cumulative deaths in group 0
  - `D_cum_g1`: cumulative deaths in group 1
- - `DeathsDaily_g0·: new deaths in group 0 (true counts, observed + unobserved)
+ - `DeathsDaily_g0`: new deaths in group 0 (true counts, observed + unobserved)
  - `DeathsDaily_g1`: new deaths in group 1
  - `DeathsDailyObs_g0`: new deaths among observed infected individuals in group 0
  - `DeathsDailyObs_g1`: new deaths among observed infected individuals in group 1
